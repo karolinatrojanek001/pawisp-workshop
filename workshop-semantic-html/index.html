@@ -215,6 +215,18 @@
         <li>Zaplanować trasę, którą poprowadzi ktoś inny.</li>
         <li>Spakować się i nie zabrać laptopa służbowego.</li>
       </ol>
+      <button type="button" id="otworz-pakowanie">Otwórz listę rzeczy do spakowania</button>
+
+      <dialog id="pakowanie" aria-labelledby="tytul-pakowania">
+        <h3 id="tytul-pakowania">Co spakować?</h3>
+        <ul>
+          <li>Dokument tożsamości</li>
+          <li>Butelka wody</li>
+          <li>Wygodne buty</li>
+          <li>Powerbank</li>
+        </ul>
+        <button type="button" id="zamknij-pakowanie">Zamknij</button>
+      </dialog>
       <table>
         <caption>Przykładowy budżet weekendu w Rzymie dla jednej osoby</caption>
         <thead>
@@ -315,6 +327,19 @@
     <p>Kontakt: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
     <p><a href="#gora">Wróć na górę</a></p>
   </footer>
+  <script>
+    const okno = document.getElementById('pakowanie');
+    const otworz = document.getElementById('otworz-pakowanie');
+    const zamknij = document.getElementById('zamknij-pakowanie');
+
+    otworz.addEventListener('click', () => {
+      okno.showModal();
+    });
+
+    zamknij.addEventListener('click', () => {
+      okno.close();
+    });
+  </script>
 </body>
 
 </html>
